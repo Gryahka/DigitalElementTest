@@ -18,12 +18,26 @@ module.exports = {
       filename: 'index.html',
     }),
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, 'src', 'partial.html'),
-      filename: 'partial.html',
+      template: path.join(__dirname, 'src', 'components/wbp-header.html'),
+      filename: 'wbp-header.html',
     }),
+
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, 'src', 'wbp-2.html'),
+      filename: 'wbp-2.html',
+    }),
+
+		// header
 		new HtmlWebpackPartialsPlugin({
-			path: './src/partial.html',
+			path: './src/components/wbp-header.html',
 			location: 'wbp-header',
+			template_filename: ['index.html']
+		}),
+
+		// banner
+		new HtmlWebpackPartialsPlugin({
+			path: './src/components/wbp-banner.html',
+			location: 'wbp-banner',
 			template_filename: ['index.html']
 		}),
 		new HtmlWebpackPartialsPlugin({
