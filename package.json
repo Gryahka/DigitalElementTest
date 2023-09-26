@@ -4,13 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-		"start": "webpack --watch",
+    "start": "webpack --watch",
     "serve": "webpack serve --open --mode development",
     "dev": "webpack --mode development",
     "build": "webpack --mode production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-
   "keywords": [],
   "author": "",
   "license": "ISC",

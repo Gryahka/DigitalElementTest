@@ -17,34 +17,87 @@ module.exports = {
       template: path.join(__dirname, 'src', 'index.html'),
       filename: 'index.html',
     }),
+
+    // header
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'src', 'components/wbp-header.html'),
       filename: 'wbp-header.html',
     }),
 
+    // banner
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, 'src', 'wbp-2.html'),
-      filename: 'wbp-2.html',
+      template: path.join(__dirname, 'src', 'components/wbp-banner.html'),
+      filename: 'wbp-banner.html',
     }),
 
-		// header
-		new HtmlWebpackPartialsPlugin({
-			path: './src/components/wbp-header.html',
-			location: 'wbp-header',
-			template_filename: ['index.html']
-		}),
+    // help
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, 'src', 'components/wbp-help.html'),
+      filename: 'wbp-help.html',
+    }),
 
-		// banner
-		new HtmlWebpackPartialsPlugin({
-			path: './src/components/wbp-banner.html',
-			location: 'wbp-banner',
-			template_filename: ['index.html']
-		}),
-		new HtmlWebpackPartialsPlugin({
-			path: './src/wbp-2.html',
-			location: 'wbp-2',
-			template_filename: ['index.html']
-		}),
+    // client
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, 'src', 'components/wbp-client.html'),
+      filename: 'wbp-client.html',
+    }),
+
+    // team
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, 'src', 'components/wbp-team.html'),
+      filename: 'wbp-team.html',
+    }),
+
+    // footer
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, 'src', 'components/wbp-footer.html'),
+      filename: 'wbp-footer.html',
+    }),
+
+    //*
+
+    // header
+    new HtmlWebpackPartialsPlugin({
+      path: './src/components/wbp-header.html',
+      location: 'wbp-header',
+      template_filename: ['index.html'],
+    }),
+
+    // banner
+    new HtmlWebpackPartialsPlugin({
+      path: './src/components/wbp-banner.html',
+      location: 'wbp-banner',
+      template_filename: ['index.html'],
+    }),
+
+    // help
+    new HtmlWebpackPartialsPlugin({
+      path: './src/components/wbp-help.html',
+      location: 'wbp-help',
+      template_filename: ['index.html'],
+    }),
+
+    // client
+    new HtmlWebpackPartialsPlugin({
+      path: './src/components/wbp-client.html',
+      location: 'wbp-client',
+      template_filename: ['index.html'],
+    }),
+
+    // team
+    new HtmlWebpackPartialsPlugin({
+      path: './src/components/wbp-team.html',
+      location: 'wbp-team',
+      template_filename: ['index.html'],
+    }),
+
+    // footer
+    new HtmlWebpackPartialsPlugin({
+      path: './src/components/wbp-footer.html',
+      location: 'wbp-footer',
+      template_filename: ['index.html'],
+    }),
+
     new FileManagerPlugin({
       events: {
         onStart: {
@@ -70,6 +123,10 @@ module.exports = {
   },
   module: {
     rules: [
+      // {
+      //   test: /\.html$/,
+      //   use: 'html-loader',
+      // },
       {
         test: /\.js$/,
         use: 'babel-loader',
@@ -77,12 +134,9 @@ module.exports = {
       },
       {
         test: /\.(scss|css)$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-          'sass-loader',
-        ],
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
       },
+
       {
         test: /\.(png|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
