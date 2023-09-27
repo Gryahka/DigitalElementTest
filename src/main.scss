@@ -1,57 +1,16 @@
-$font-size: 1rem;
-$font-color: lch(28 99 35);
+@import "normalize.scss";
+@import "styles/mixins.scss";
+@import "fonts.scss";
+@import "styles/banner.scss";
 
-@import 'normalize.scss';
-
-$desktop: 1440px;
-$laptop: 1024px;
-$tablet: 768px;
-$mobile: 425px;
-
-@mixin media-down($media) {
-  @if $media==mobile {
-    @media only screen and (max-width: $mobile) {
-      @content;
-    }
-  } @else if $media==tablet {
-    @media only screen and (max-width: $tablet) {
-      @content;
-    }
-  } @else if $media==laptop {
-    @media only screen and (max-width: $laptop) {
-      @content;
-    }
-  } @else if $media==desktop {
-    @media only screen and (max-width: $desktop) {
-      @content;
-    }
-  }
-}
-
-@mixin media-up($media) {
-  @if $media==mobile {
-    @media only screen and (min-width: $mobile) {
-      @content;
-    }
-  } @else if $media==tablet {
-    @media only screen and (min-width: $tablet) {
-      @content;
-    }
-  } @else if $media==laptop {
-    @media only screen and (min-width: $laptop) {
-      @content;
-    }
-  } @else if $media==desktop {
-    @media only screen and (min-width: $desktop) {
-      @content;
-    }
-  }
+* {
+	font-family: "Gilroy";
 }
 
 // typography
 a {
 	transition: 0.2s;
-	
+
 	&:hover {
 		color: rgba(187, 217, 238, 0.905);
 	}
@@ -65,26 +24,26 @@ a {
 
 .container {
 	margin: 0 auto;
-  padding: 0 16px;
+	padding: 0 16px;
 
-  max-width: 940px;
+	max-width: 940px;
 }
 
 .btn {
-		font-family: Gilroy;
-		font-size: 16px;
-		line-height: 26px;
-		letter-spacing: 0.64px;
-		text-align: center;
+	font-family: Gilroy;
+	font-size: 16px;
+	line-height: 26px;
+	letter-spacing: 0.64px;
+	text-align: center;
 
-		background: rgb(90, 152, 208);
+	background: rgb(90, 152, 208);
 
-		padding: 15px;
+	padding: 15px;
 
-		border-radius: 10px;
+	border-radius: 10px;
 
-		width: 220px;
-		max-height: 56px;
+	width: 220px;
+	max-height: 56px;
 }
 
 // ***
@@ -96,11 +55,11 @@ a {
 
 		@include media-down(laptop) {
 			border-radius: 150px 0 0 0;
-    }
+		}
 
 		@include media-down(tablet) {
 			border-radius: 80px 0 0 0;
-    }
+		}
 	}
 
 	&__bottom {
@@ -113,113 +72,6 @@ a {
 		border-radius: 0 200px 0 0;
 
 		margin: 0 96px 0px 0px;
-
-
-	}
-}
-
-
-.banner {
-
-	// &__container {
-	// 	opacity: 0.20; 
-	// 	background: linear-gradient(0deg, rgb(152, 195, 232) 28%, rgba(152, 195, 232, 0) 100%);
-	// 	width: 100%;
-	// 	height: 100%;
-	// }
-
-	&__inner {
-		display: flex;
-		justify-content: space-between;
-
-		gap: 30px;
-
-		z-index: 2;
-
-		max-width: 1600px;
-		// padding-left: 213px;
-
-		@include media-down(laptop) {
-    }
-
-		@include media-down(tablet) {
-			flex-direction: column;
-    }
-	}
-
-	&__title {
-		// font-family: Galien;
-		font-size: 64px;
-		font-weight: 700;
-		line-height: 74px;
-		letter-spacing: 2.56px;
-		color: rgb(31, 63, 104);
-
-		max-width: 510px;
-
-    margin-bottom: 32px;
-
-		@include media-down(laptop) {
-			font-size: 56px;
-			line-height: 64px;
-
-			margin-bottom: 16px;
-    }
-
-		@include media-down(tablet) {
-			font-size: 46px;
-			line-height: 54px;
-			text-align: center;
-
-			max-width: none;
-
-			margin-bottom: 12px;
-    }
-	}
-
-	&__tx {
-		// font-family: Gilroy;
-		font-size: 16px;
-		font-weight: 400;
-		line-height: 26px;
-		letter-spacing: 0.80px;
-		color: rgb(31, 63, 104);
-		opacity: 60%;
-
-		margin-bottom: 71px;
-
-		max-width: 425px;
-
-		@include media-down(laptop) {
-			font-size: 14px;
-			line-height: 24px;
-
-			margin-bottom: 16px;
-    }
-
-		@include media-down(tablet) {
-			text-align: center;
-
-			max-width: none;
-    }
-	}
-
-	&__btn {
-    box-shadow: 5px 10px 20px 0px rgba(53, 110, 173, 0.2);
-
-    transition: 0.3s;
-
-    &:hover {
-			box-shadow: 5px 5px 10px 0px rgba(24, 143, 222, 0.459);
-    }
-
-		@include media-down(tablet) {
-			display: block;
-			margin: 0 auto;
-    }
-	}
-
-	&__image {
 	}
 }
 
@@ -250,7 +102,7 @@ a {
 			font-size: 30px;
 			line-height: 36px;
 		}
-	
+
 		@include media-down(tablet) {
 			font-size: 24px;
 			line-height: 24px;
@@ -279,7 +131,7 @@ a {
 		}
 	}
 
-	&__right  {
+	&__right {
 		display: grid;
 		grid-template-rows: repeat(2, 1fr);
 		gap: 100px;
@@ -291,19 +143,19 @@ a {
 
 			margin-top: -66px;
 		}
-	
+
 		@include media-down(tablet) {
 			gap: 40px;
 		}
 	}
 
-	&__left  {
+	&__left {
 		margin-top: 158px;
 
 		@include media-down(laptop) {
 			margin-top: 200px;
 		}
-	
+
 		@include media-down(tablet) {
 			margin-top: 65px;
 		}
@@ -330,7 +182,7 @@ a {
 			@include media-down(laptop) {
 				transform: scale(1.1);
 			}
-		
+
 			@include media-down(tablet) {
 				transform: scale(0.9);
 			}
@@ -339,7 +191,7 @@ a {
 		@include media-down(laptop) {
 			padding: 38px;
 		}
-	
+
 		@include media-down(tablet) {
 			padding: 28px;
 			max-width: none;
@@ -360,7 +212,7 @@ a {
 
 			margin-bottom: 42px;
 		}
-	
+
 		@include media-down(tablet) {
 			line-height: 22px;
 
@@ -383,7 +235,7 @@ a {
 
 			margin-bottom: 14px;
 		}
-	
+
 		@include media-down(tablet) {
 			line-height: 26px;
 
@@ -407,7 +259,7 @@ a {
 
 			margin-bottom: 26px;
 		}
-	
+
 		@include media-down(tablet) {
 			line-height: 22px;
 
@@ -425,18 +277,18 @@ a {
 }
 
 .client {
-padding-top: 96px;
-padding-bottom: 125px;
+	padding-top: 96px;
+	padding-bottom: 125px;
 
-@include media-down(laptop) {
-	padding-top: 70px;
-	padding-bottom: 90px;
-}
+	@include media-down(laptop) {
+		padding-top: 70px;
+		padding-bottom: 90px;
+	}
 
-@include media-down(tablet) {
-	padding-top: 50px;
-	padding-bottom: 70px;
-}
+	@include media-down(tablet) {
+		padding-top: 50px;
+		padding-bottom: 70px;
+	}
 
 	&__info {
 		display: flex;
@@ -473,7 +325,7 @@ padding-bottom: 125px;
 			font-size: 30px;
 			line-height: 36px;
 		}
-	
+
 		@include media-down(tablet) {
 			font-size: 24px;
 			line-height: 24px;
@@ -496,13 +348,13 @@ padding-bottom: 125px;
 			line-height: 24px;
 
 			// margin-bottom: 16px;
-    }
+		}
 
 		@include media-down(tablet) {
 			text-align: center;
 
 			max-width: none;
-    }
+		}
 	}
 
 	&__boxes {
@@ -522,7 +374,7 @@ padding-bottom: 125px;
 		}
 
 		&::after {
-			content: '';
+			content: "";
 			position: absolute;
 			top: 0;
 			right: 0;
@@ -534,7 +386,7 @@ padding-bottom: 125px;
 		}
 
 		&::before {
-			content: '';
+			content: "";
 			position: absolute;
 			top: 0;
 			right: 0;
@@ -544,7 +396,7 @@ padding-bottom: 125px;
 			width: 100%;
 			height: 2px;
 		}
-	
+
 		@include media-down(tablet) {
 			padding: 16px 28px;
 		}
@@ -572,7 +424,7 @@ padding-bottom: 125px;
 			font-size: 16px;
 			line-height: 33px;
 		}
-	
+
 		@include media-down(tablet) {
 			line-height: 28px;
 		}
@@ -588,7 +440,7 @@ padding-bottom: 125px;
 	position: relative;
 
 	&::before {
-		content: '';
+		content: "";
 		position: absolute;
 		bottom: 0;
 		right: 0;
@@ -604,7 +456,7 @@ padding-bottom: 125px;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-	
+
 		padding-top: 91px;
 		padding-bottom: 96px;
 	}
@@ -617,7 +469,7 @@ padding-bottom: 125px;
 		// font-family: Gilroy;
 		font-size: 36px;
 		line-height: 46px;
-		letter-spacing: 0.05em; 
+		letter-spacing: 0.05em;
 
 		margin-bottom: 32px;
 
@@ -633,12 +485,17 @@ padding-bottom: 125px;
 	}
 
 	&__btn {
-		background: linear-gradient(130deg,  rgb(53, 122, 182), rgba(90, 152, 208, 1), rgb(52, 128, 194));
+		background: linear-gradient(
+			130deg,
+			rgb(53, 122, 182),
+			rgba(90, 152, 208, 1),
+			rgb(52, 128, 194)
+		);
 
 		background-size: 200% 100%;
 		background-position: 100% 0;
-		transition: background-position .5s;
-		
+		transition: background-position 0.5s;
+
 		&:hover {
 			background-position: 0 0;
 		}
@@ -648,7 +505,7 @@ padding-bottom: 125px;
 .footer {
 	padding-top: 96px;
 	padding-bottom: 64px;
-	
+
 	&__content {
 		display: flex;
 		gap: 100px;
@@ -657,18 +514,16 @@ padding-bottom: 125px;
 	}
 
 	&__info {
-
 	}
 
 	&__logo {
-margin-bottom: 33px;
+		margin-bottom: 33px;
 	}
 
 	&__contacts {
 		display: flex;
 		flex-direction: column;
 		gap: 24px;
-
 	}
 
 	&__row {
@@ -676,15 +531,12 @@ margin-bottom: 33px;
 		flex-direction: row;
 
 		gap: 16px;
-
 	}
 
 	&__value {
-
 	}
 
 	&__descr {
-
 	}
 
 	&__links {
@@ -693,11 +545,10 @@ margin-bottom: 33px;
 	}
 
 	&__column {
-
 	}
 
 	&__subtitle {
-margin-bottom: 32px;
+		margin-bottom: 32px;
 	}
 
 	&__inner {
@@ -707,12 +558,9 @@ margin-bottom: 32px;
 	}
 
 	&__link {
-
 	}
 
 	&__tx {
-		opacity: 0.40;
+		opacity: 0.4;
 	}
 }
-
-

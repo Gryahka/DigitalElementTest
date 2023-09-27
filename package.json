@@ -10,18 +10,12 @@
     "build": "webpack --mode production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/injashkin/webpack-template/issues"
-  },
-  "homepage": "https://github.com/injashkin/webpack-template#readme",
   "devDependencies": {
     "@babel/core": "^7.19.3",
     "@babel/preset-env": "^7.19.3",
     "babel-loader": "^8.2.5",
     "css-loader": "^6.7.1",
+    "file-loader": "^6.2.0",
     "filemanager-webpack-plugin": "^7.0.0",
     "html-webpack-partials-plugin": "^0.8.0",
     "html-webpack-plugin": "^5.5.0",
@@ -43,5 +37,7 @@
     "webpack-cli": "^4.10.0",
     "webpack-dev-server": "^4.11.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "lodash-webpack-plugin": "^0.11.6"
+  }
 }
