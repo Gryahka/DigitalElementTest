@@ -95,7 +95,7 @@ a {
 		border-radius: 200px 0 0 0;
 
 		@include media-down(laptop) {
-			border-radius: 150px 0 0 0;
+			border-radius: 130px 0 0 0;
     }
 
 		@include media-down(tablet) {
@@ -112,9 +112,19 @@ a {
 
 		border-radius: 0 200px 0 0;
 
-		margin: 0 96px 0px 0px;
+		margin-right: 96px;
 
+		@include media-down(laptop) {
+			border-radius: 0 130px 0 0;
 
+		margin-right: 76px;
+    }
+
+		@include media-down(tablet) {
+			border-radius: 0 80px 0 0;
+
+			margin-right: 56px;
+    }
 	}
 }
 
@@ -247,13 +257,13 @@ a {
 		max-width: 358px;
 
 		@include media-down(laptop) {
-			font-size: 30px;
-			line-height: 36px;
+			font-size: 32px;
+			line-height: 42px;
 		}
 	
 		@include media-down(tablet) {
-			font-size: 24px;
-			line-height: 24px;
+			font-size: 26px;
+			line-height: 36px;
 
 			max-width: none;
 		}
@@ -446,7 +456,7 @@ padding-bottom: 125px;
 		margin-bottom: 111px;
 
 		@include media-down(laptop) {
-			gap: 40px;
+			gap: 35px;
 
 			margin-bottom: 80px;
 		}
@@ -470,13 +480,13 @@ padding-bottom: 125px;
 		max-width: 223px;
 
 		@include media-down(laptop) {
-			font-size: 30px;
-			line-height: 36px;
+			font-size: 32px;
+			line-height: 42px;
 		}
 	
 		@include media-down(tablet) {
-			font-size: 24px;
-			line-height: 24px;
+			font-size: 26px;
+			line-height: 36px;
 
 			max-width: none;
 		}
@@ -494,6 +504,8 @@ padding-bottom: 125px;
 		@include media-down(laptop) {
 			font-size: 14px;
 			line-height: 24px;
+
+			max-width: 500px;
 
 			// margin-bottom: 16px;
     }
@@ -603,14 +615,32 @@ padding-bottom: 125px;
 	&__inner {
 		display: flex;
 		justify-content: space-between;
+		gap: 16px;
 		align-items: center;
 	
 		padding-top: 91px;
 		padding-bottom: 96px;
+		
+		@include media-down(laptop) {
+			padding-top: 71px;
+			padding-bottom: 76px;
+    }
+
+		@include media-down(tablet) {
+			flex-direction: column;
+			gap: 32px;
+
+			padding-top: 51px;
+			padding-bottom: 56px;
+    }
 	}
 
 	&__info {
 		max-width: 460px;
+
+		@include media-down(tablet) {
+			max-width: none;
+    }
 	}
 
 	&__title {
@@ -622,6 +652,22 @@ padding-bottom: 125px;
 		margin-bottom: 32px;
 
 		max-width: 317px;
+
+		@include media-down(laptop) {
+			font-size: 32px;
+			line-height: 42px;
+
+			margin-bottom: 28px;
+		}
+	
+		@include media-down(tablet) {
+			font-size: 26px;
+			line-height: 36px;
+
+			margin-bottom: 22px;
+
+			max-width: none;
+		}
 	}
 
 	&__tx {
@@ -630,6 +676,11 @@ padding-bottom: 125px;
 		line-height: 26px;
 		letter-spacing: 0.05em;
 		opacity: 60%;
+
+		@include media-down(laptop) {
+			font-size: 14px;
+			line-height: 24px;
+    }
 	}
 
 	&__btn {
@@ -648,12 +699,34 @@ padding-bottom: 125px;
 .footer {
 	padding-top: 96px;
 	padding-bottom: 64px;
+
+	@include media-down(laptop) {
+		padding-top: 70px;
+		padding-bottom: 44px;
+	}
+
+	@include media-down(tablet) {
+		padding-top: 50px;
+		padding-bottom: 24px;
+	}
 	
 	&__content {
 		display: flex;
 		gap: 100px;
 
 		margin-bottom: 64px;
+
+		@include media-down(laptop) {
+			gap: 70px;
+
+			margin-bottom: 44px;
+		}
+
+		@include media-down(tablet) {
+			gap: 40px;
+
+			margin-bottom: 24px;
+		}
 	}
 
 	&__info {
@@ -661,7 +734,11 @@ padding-bottom: 125px;
 	}
 
 	&__logo {
-margin-bottom: 33px;
+		margin-bottom: 33px;
+
+		@include media-down(laptop) {
+			margin-bottom: 22px;
+		}
 	}
 
 	&__contacts {
@@ -669,14 +746,15 @@ margin-bottom: 33px;
 		flex-direction: column;
 		gap: 24px;
 
+		@include media-down(laptop) {
+			gap: 16px;
+		}
 	}
 
 	&__row {
 		display: flex;
 		flex-direction: row;
-
 		gap: 16px;
-
 	}
 
 	&__value {
@@ -690,6 +768,14 @@ margin-bottom: 33px;
 	&__links {
 		display: flex;
 		gap: 77px;
+
+		@include media-down(laptop) {
+			gap: 57px;
+		}
+
+		@include media-down(tablet) {
+			gap: 37px;
+		}
 	}
 
 	&__column {
@@ -697,7 +783,26 @@ margin-bottom: 33px;
 	}
 
 	&__subtitle {
-margin-bottom: 32px;
+		font-family: Gilroy;
+		font-size: 20px;
+		font-weight: 600;
+		line-height: 30px;
+		letter-spacing: 1px;
+
+		margin-bottom: 32px;
+
+		@include media-down(laptop) {
+			font-size: 18px;
+			line-height: 28px;
+
+			margin-bottom: 14px;
+		}
+
+		@include media-down(tablet) {
+			line-height: 26px;
+
+			margin-bottom: 12px;
+		}
 	}
 
 	&__inner {
@@ -707,7 +812,12 @@ margin-bottom: 32px;
 	}
 
 	&__link {
-
+		font-family: Gilroy;
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 26px;
+		letter-spacing: 0.80px;
+		word-wrap: break-word
 	}
 
 	&__tx {
