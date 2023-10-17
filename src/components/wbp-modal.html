@@ -1,0 +1,55 @@
+<div class="custom-modal">
+  <div class="custom-modal__container">
+    <div class="custom-modal__inner">
+      <div class="custom-modal__content">
+        <div class="custom-modal__body custom-modal__body--active">
+          <div class="form">
+            <div class="form__title-row">
+              <h3 class="form__title subtitle">SEND US MESSAGE</h3>
+
+              <img class="form__close" src="cross.svg" alt="logo" />
+            </div>
+
+            <div class="form__info">
+              <div class="form__item">
+                <span class="form__subtitle"> Full Name </span>
+
+                <div class="form__inner" id="name-wrap">
+                  <input id="name" class="form__input" type="text" placeholder="Your Name" />
+                </div>
+              </div>
+
+              <div class="form__item">
+                <span class="form__subtitle"> Email </span>
+
+                <div class="form__inner" id="email-wrap">
+                  <input id="email" class="form__input" type="text" placeholder="Your Email" />
+                </div>
+              </div>
+
+              <div class="form__item">
+                <span class="form__subtitle"> Message </span>
+
+                <div class="form__inner" id="message-wrap">
+                  <textarea
+                    id="message"
+                    class="form__input form__input--long"
+                    placeholder="Your Message"
+                  ></textarea>
+                </div>
+              </div>
+            </div>
+
+            <button class="form__btn tx-white">SUBMIT</button>
+          </div>
+        </div>
+
+        <div class="custom-modal__body">
+          <wbp-popup></wbp-popup>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="custom-modal__backdrop" aria-hidden="true" />
+</div>

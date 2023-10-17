@@ -1,0 +1,164 @@
+@import 'mixins.scss';
+
+.header {
+  &__fake {
+    height: 140px;
+  }
+
+  @include media-down(tablet) {
+    height: 70px;
+  }
+
+  &__inner {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    padding: 40px 0;
+
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(6px);
+
+    transition: 0.6s;
+
+    &--mini {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    @include media-down(tablet) {
+      padding: 20px 0;
+    }
+  }
+
+  &__wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 0 auto;
+    max-width: 1200px;
+
+    padding: 20px 16px;
+
+    @include media-down(tablet) {
+      padding: 10px 16px;
+    }
+  }
+
+  &__menu-btn {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+
+    z-index: 2;
+    overflow: hidden;
+
+    cursor: pointer;
+  }
+
+  &__stick {
+    width: 24px;
+    height: 3px;
+    background: rgb(53, 110, 173);
+  }
+
+  &__overlay {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+
+    cursor: pointer;
+
+    background: rgba(255, 255, 255, 0.6);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 0.3s;
+
+    &--active {
+      background: rgba(255, 255, 255, 0.6);
+      visibility: visible;
+      opacity: 1;
+      overflow: hidden;
+    }
+  }
+
+  &__menu-inner {
+    position: fixed;
+    z-index: 100;
+    left: 100%;
+    right: 0;
+    top: 0;
+
+    padding: 10px;
+
+    background: rgb(255, 255, 255);
+    width: 300px;
+    height: 100%;
+
+    transition: 0.3s;
+
+    &--active {
+      box-shadow: 5px 20px 50px rgba(16, 112, 177, 0.2);
+      transform: translateX(-100%);
+    }
+  }
+
+  &__menu-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 48px;
+  }
+
+  &__menu-box {
+    display: flex;
+    gap: 16px;
+  }
+
+  &__menu-tx {
+    font-size: 28px;
+    font-family: Gilroy;
+    font-weight: 600;
+    line-height: 46px;
+    letter-spacing: 0.56px;
+    color: rgb(31, 63, 104);
+  }
+
+  &__menu-closed {
+    cursor: pointer;
+  }
+
+  &__menu-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__menu-link {
+    display: block;
+
+    font-size: 20px;
+    color: #ffffff;
+
+    padding: 10px;
+    margin-bottom: 15px;
+
+    width: 90%;
+
+    border-radius: 10px;
+
+    box-shadow: 5px 9px 5px rgba(16, 112, 177, 0.2);
+    background: #5a98d0;
+  }
+}

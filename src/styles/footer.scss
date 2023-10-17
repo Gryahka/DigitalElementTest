@@ -1,0 +1,160 @@
+@import "mixins.scss";
+
+.footer {
+	margin: 0 auto;
+	max-width: 845px;
+	padding: 93px 16px 64px 16px;
+
+	@include media-down(laptop) {
+		padding-top: 70px;
+		padding-bottom: 44px;
+	}
+
+	@include media-down(tablet) {
+		padding-top: 50px;
+		padding-bottom: 24px;
+	}
+
+	&__content {
+		display: flex;
+		gap: 60px;
+
+		margin-bottom: 62px;
+
+		@include media-down(laptop) {
+			gap: 70px;
+
+			margin-bottom: 44px;
+		}
+
+		@include media-down(tablet) {
+			flex-direction: column;
+			gap: 35px;
+
+			margin-bottom: 24px;
+		}
+	}
+
+	&__logo-row {
+		display: flex;
+		gap: 15px;
+
+		margin-bottom: 33px;
+
+		@include media-down(laptop) {
+			margin-bottom: 22px;
+		}
+	}
+
+	&__logo-tx {
+		font-size: 28px;
+		font-family: Gilroy;
+		font-weight: 600;
+		line-height: 46px;
+		letter-spacing: 0.56px;
+	}
+
+	&__contacts {
+		display: flex;
+		flex-direction: column;
+		gap: 22px;
+
+		@include media-down(laptop) {
+			gap: 16px;
+		}
+	}
+
+	&__row {
+		display: flex;
+		flex-direction: row;
+		gap: 24px;
+	}
+
+	&__value {
+		font-size: 16px;
+		font-weight: 600;
+		line-height: 26px;
+		letter-spacing: 0.8px;
+
+		@include media-down(laptop) {
+			font-size: 14px;
+			line-height: 24px;
+		}
+	}
+
+	&__descr {
+		font-size: 16px;
+		line-height: 26px;
+		letter-spacing: 0.8px;
+
+		max-width: 300px;
+
+		@include media-down(laptop) {
+			font-size: 14px;
+			line-height: 24px;
+
+			max-width: none;
+		}
+	}
+
+	&__links {
+		display: flex;
+		gap: 77px;
+
+		@include media-down(laptop) {
+			gap: 57px;
+		}
+
+		@include media-down(tablet) {
+			gap: 20px;
+			justify-content: space-between;
+		}
+	}
+
+	&__subtitle {
+		font-size: 20px;
+		font-weight: 600;
+		line-height: 30px;
+		letter-spacing: 1px;
+		white-space: nowrap;
+
+		margin-bottom: 32px;
+
+		@include media-down(laptop) {
+			font-size: 18px;
+			line-height: 28px;
+
+			margin-bottom: 14px;
+		}
+
+		@include media-down(tablet) {
+			line-height: 26px;
+
+			margin-bottom: 12px;
+		}
+	}
+
+	&__inner {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+	}
+
+	&__link {
+		font-size: 16px;
+		line-height: 26px;
+		letter-spacing: 0.8px;
+		white-space: nowrap;
+
+		max-width: fit-content;
+
+		@include media-down(laptop) {
+			font-size: 14px;
+			line-height: 24px;
+		}
+	}
+
+	&__tx {
+		opacity: 0.4;
+	}
+}

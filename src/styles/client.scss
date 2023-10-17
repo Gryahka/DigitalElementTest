@@ -1,0 +1,128 @@
+@import 'mixins.scss';
+
+.client {
+  padding-top: 96px;
+  padding-bottom: 117px;
+
+  @include media-down(laptop) {
+    padding-top: 70px;
+    padding-bottom: 90px;
+  }
+
+  @include media-down(tablet) {
+    padding-top: 50px;
+    padding-bottom: 70px;
+  }
+
+  &__info {
+    display: flex;
+    gap: 97px;
+    flex-direction: row;
+
+    margin-bottom: 103px;
+
+    @include media-down(laptop) {
+      gap: 35px;
+
+      margin-bottom: 80px;
+    }
+
+    @include media-down(tablet) {
+      gap: 30px;
+      flex-direction: column;
+
+      margin-bottom: 50px;
+    }
+  }
+
+  &__title {
+    max-width: 225px;
+
+    @include media-down(tablet) {
+      max-width: none;
+    }
+  }
+
+  &__tx {
+    font-size: 16px;
+    line-height: 26px;
+    letter-spacing: 0.8px;
+    opacity: 60%;
+
+    max-width: 540px;
+
+    @include media-down(laptop) {
+      font-size: 14px;
+      line-height: 24px;
+
+      max-width: 500px;
+    }
+
+    @include media-down(tablet) {
+      text-align: center;
+
+      max-width: none;
+    }
+  }
+
+  &__boxes {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    @include media-down(tablet) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__box {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 117px;
+
+    padding: 10px;
+
+    border-right: 1px solid rgba(253, 255, 255, 0.533);
+
+    &:nth-child(-n + 4) {
+      border-bottom: 1px solid rgba(253, 255, 255, 0.533);
+    }
+
+    &--btn {
+      background: rgba(31, 63, 104, 0.15);
+    }
+
+    @include media-down(tablet) {
+      padding: 16px 28px;
+
+      height: 60px;
+    }
+  }
+
+  &__logo {
+    position: relative;
+
+    font-size: 20px;
+    line-height: 46px;
+    letter-spacing: 0.4px;
+
+    transition: 0.4s;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+
+    @include media-down(laptop) {
+      font-size: 16px;
+      line-height: 33px;
+    }
+
+    @include media-down(tablet) {
+      line-height: 28px;
+      text-align: center;
+    }
+  }
+}
